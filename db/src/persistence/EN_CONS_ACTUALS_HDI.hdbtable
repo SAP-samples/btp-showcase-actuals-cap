@@ -1,0 +1,13 @@
+COLUMN TABLE "EN_CONS_ACTUALS_HDI"(
+	"YEAR_"				INTEGER         COMMENT 'Year',
+	"MONTH_" 		    NVARCHAR(2)     COMMENT 'Month',
+	"WEEKNUM_" 			NVARCHAR(2)     COMMENT 'Week number',
+	"WEEKDAY_" 		    INTEGER         COMMENT 'Week day',
+	"DAY_"	            NVARCHAR(2)     COMMENT 'Day',
+	"WEEKEND_YN_"		NVARCHAR(1)     COMMENT 'Is weekend? (Y/N)',
+	"HOUR_"			    NVARCHAR(2)     COMMENT 'Hour',
+	"MINUTE_"			NVARCHAR(2)     COMMENT 'Minute',
+    "RECORDMODE"		NVARCHAR(5000)  COMMENT 'RecordMode',
+    "EN_CONS_ACTUAL"    DECIMAL(17, 0)  COMMENT 'Energy consumption (actual)',
+    "UNIT"			    NVARCHAR(3)     COMMENT 'Unit'
+) COMMENT 'Energy consumption information loaded from data lake or BW on HANA' COLUMN LOADABLE UNLOAD PRIORITY 0;

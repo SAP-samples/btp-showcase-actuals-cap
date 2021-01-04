@@ -1,0 +1,12 @@
+{ 
+  "role": { 
+    "name": "DWC_CONSUMPTION_ROLE#", 
+    "object_privileges": [ 
+      { 
+        "name":"EN_CONS_ACTUALS_HDI", 
+        "type":"TABLE", 
+        "privileges_with_grant_option":[ "SELECT" ] 
+      }
+    ]
+  }
+}

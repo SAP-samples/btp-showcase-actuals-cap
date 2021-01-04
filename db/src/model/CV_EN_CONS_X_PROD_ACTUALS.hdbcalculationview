@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_EN_CONS_X_PROD_ACTUALS" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false" cacheEnabled="false" analyticViewCompatibilityMode="false">
+<descriptions defaultDescription="Energy consumption x production (actuals)">
+  <comment text="HDI"/>
+</descriptions>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EN_CONS_X_PROD_ACTUALS">
+    <resourceUri>EN_CONS_X_PROD_ACTUALS</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<logicalModel id="EN_CONS_X_PROD_ACTUALS">
+  <attributes>
+    <attribute id="YEAR_" order="1" displayAttribute="false" attributeHierarchyActive="false" key="true">
+      <descriptions defaultDescription="Year"/>
+      <keyMapping columnObjectName="EN_CONS_X_PROD_ACTUALS" columnName="YEAR_"/>
+    </attribute>
+    <attribute id="MONTH_" order="2" displayAttribute="false" attributeHierarchyActive="false" key="true">
+      <descriptions defaultDescription="Month"/>
+      <keyMapping columnObjectName="EN_CONS_X_PROD_ACTUALS" columnName="MONTH_"/>
+    </attribute>
+    <attribute id="DAY_" order="3" displayAttribute="false" attributeHierarchyActive="false" key="true">
+      <descriptions defaultDescription="Day"/>
+      <keyMapping columnObjectName="EN_CONS_X_PROD_ACTUALS" columnName="DAY_"/>
+    </attribute>
+    <attribute id="HOUR_" order="4" displayAttribute="false" attributeHierarchyActive="false" key="true">
+      <descriptions defaultDescription="Hour"/>
+      <keyMapping columnObjectName="EN_CONS_X_PROD_ACTUALS" columnName="HOUR_"/>
+    </attribute>
+    <attribute id="MINUTE_" order="5" displayAttribute="false" attributeHierarchyActive="false" key="true">
+      <descriptions defaultDescription="Minute"/>
+      <keyMapping columnObjectName="EN_CONS_X_PROD_ACTUALS" columnName="MINUTE_"/>
+    </attribute>
+    <attribute id="WEEKNUM_" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Week number"/>
+      <keyMapping columnObjectName="EN_CONS_X_PROD_ACTUALS" columnName="WEEKNUM_"/>
+    </attribute>
+    <attribute id="WEEKDAY_" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Week day"/>
+      <keyMapping columnObjectName="EN_CONS_X_PROD_ACTUALS" columnName="WEEKDAY_"/>
+    </attribute>
+    <attribute id="WEEKEND_YN_" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Is weekend? (Y/N)"/>
+      <keyMapping columnObjectName="EN_CONS_X_PROD_ACTUALS" columnName="WEEKEND_YN_"/>
+    </attribute>
+    <attribute id="RECORDMODE" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RecordMode"/>
+      <keyMapping columnObjectName="EN_CONS_X_PROD_ACTUALS" columnName="RECORDMODE"/>
+    </attribute>
+    <attribute id="UNIT" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit"/>
+      <keyMapping columnObjectName="EN_CONS_X_PROD_ACTUALS" columnName="UNIT"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="EN_CONS_ACTUAL" order="11" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Energy consumption (actual)"/>
+      <measureMapping columnObjectName="EN_CONS_X_PROD_ACTUALS" columnName="EN_CONS_ACTUAL"/>
+    </measure>
+    <measure id="EN_PROD_ACTUAL" order="12" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Energy production (actual)"/>
+      <measureMapping columnObjectName="EN_CONS_X_PROD_ACTUALS" columnName="EN_PROD_ACTUAL"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

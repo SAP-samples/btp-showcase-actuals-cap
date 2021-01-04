@@ -1,0 +1,60 @@
+_schema-version: "3.1"
+ID: csm-demo-202002-actuals-cap
+description: A simple CAP project.
+version: 1.0.0
+modules:
+- name: csm-demo-202002-actuals-cap-srv
+  type: nodejs
+  path: gen/srv
+  requires:
+  - name: csm-demo-202002-actuals-cap-db
+    parameters:
+      disk-quota: 256M
+      memory: 256M
+  - name: cross-container-service-1
+  provides:
+  - name: srv-api
+    properties:
+      srv-url: ${default-url}
+- name: csm-demo-202002-actuals-cap-db-deployer
+  type: hdb
+  path: db
+  requires:
+  - name: csm-demo-202002-actuals-cap-db
+    parameters:
+      disk-quota: 256M
+      memory: 256M
+    properties:
+      TARGET_CONTAINER: ~{hdi-service-name}
+  - name: cross-container-service-1
+    group: SERVICE_REPLACEMENTS
+    properties:
+      key: ServiceName_1
+      service: ~{the-service-name}
+  parameters:
+    buildpack: nodejs_buildpack
+resources:
+- name: csm-demo-202002-actuals-cap-db
+  type: com.sap.xs.hdi-container
+  parameters:
+    config:
+      database_id: 9ee99a70-9d98-481d-ab94-00b0417b66c5
+      schema: CSM_DEMO_202002_ACTUALS
+    service: hana
+    service-plan: hdi-shared
+  properties:
+    hdi-service-name: ${service-name}
+- name: cross-container-service-1
+  type: org.cloudfoundry.existing-service
+  parameters:
+    service-name: UPS_DWC_SPACE_CSMDEMO202002
+  properties:
+    the-service-name: ${service-name}
+parameters:
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npm install --production
+    - npx -p @sap/cds-dk cds build --production

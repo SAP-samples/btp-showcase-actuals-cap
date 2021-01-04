@@ -1,0 +1,27 @@
+{
+   "role":{
+		"name":"default_access_role",
+		"object_privileges": [
+			{
+			  "type": "SYNONYM",
+			  "name": "EN_CONS_X_PROD_ACTUALS",
+			  "privileges": [
+			    "SELECT"
+			  ]
+			}
+		],
+		"schema_privileges":[
+		 {
+		    "privileges":[
+		       "SELECT",
+		       "INSERT",
+		       "UPDATE",
+		       "DELETE",
+		       "EXECUTE",
+		       "CREATE TEMPORARY TABLE",
+		       "SELECT CDS METADATA"
+		    ]
+		 }
+		]
+   }
+}
