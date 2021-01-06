@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_EN_CONS_X_PROD_ACTUALS" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false" cacheEnabled="false" analyticViewCompatibilityMode="false">
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" xmlns:DataFoundation="http://www.sap.com/ndb/BiModelDataFoundation.ecore" xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" id="CV_EN_CONS_X_PROD_ACTUALS" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false" cacheEnabled="false" analyticViewCompatibilityMode="false">
 <descriptions defaultDescription="Energy consumption x production (actuals)">
   <comment text="HDI"/>
 </descriptions>
-<localVariables/>
+<localVariables>
+  <variable id="FILTER_YEAR" parameter="true">
+    <descriptions defaultDescription=""/>
+    <variableProperties datatype="INTEGER" mandatory="true" defaultValue="2019">
+      <valueDomain type="empty"/>
+      <selection multiLine="false" type="SingleValue"/>
+    </variableProperties>
+  </variable>
+</localVariables>
 <variableMappings/>
 <dataSources>
   <DataSource id="EN_CONS_X_PROD_ACTUALS">
@@ -13,23 +21,23 @@
 <calculationViews/>
 <logicalModel id="EN_CONS_X_PROD_ACTUALS">
   <attributes>
-    <attribute id="YEAR_" order="1" displayAttribute="false" attributeHierarchyActive="false" key="true">
+    <attribute id="YEAR_" order="1" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Year"/>
       <keyMapping columnObjectName="EN_CONS_X_PROD_ACTUALS" columnName="YEAR_"/>
     </attribute>
-    <attribute id="MONTH_" order="2" displayAttribute="false" attributeHierarchyActive="false" key="true">
+    <attribute id="MONTH_" order="2" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Month"/>
       <keyMapping columnObjectName="EN_CONS_X_PROD_ACTUALS" columnName="MONTH_"/>
     </attribute>
-    <attribute id="DAY_" order="3" displayAttribute="false" attributeHierarchyActive="false" key="true">
+    <attribute id="DAY_" order="3" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Day"/>
       <keyMapping columnObjectName="EN_CONS_X_PROD_ACTUALS" columnName="DAY_"/>
     </attribute>
-    <attribute id="HOUR_" order="4" displayAttribute="false" attributeHierarchyActive="false" key="true">
+    <attribute id="HOUR_" order="4" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Hour"/>
       <keyMapping columnObjectName="EN_CONS_X_PROD_ACTUALS" columnName="HOUR_"/>
     </attribute>
-    <attribute id="MINUTE_" order="5" displayAttribute="false" attributeHierarchyActive="false" key="true">
+    <attribute id="MINUTE_" order="5" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Minute"/>
       <keyMapping columnObjectName="EN_CONS_X_PROD_ACTUALS" columnName="MINUTE_"/>
     </attribute>
@@ -67,8 +75,17 @@
   </baseMeasures>
   <calculatedMeasures/>
   <restrictedMeasures/>
-  <localDimensions/>
-</logicalModel>
+  <localDimensions>
+    <localDimension id="HIE_TIME">
+      <hierarchies>
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="HIE_TIME" aggregateAllNodes="true" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="LEVEL_NAME_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+          <descriptions defaultDescription="HIE_TIME"/>
+          <unassignedMemberProperties mode="FALSE"/>
+          <levels/>
+        </hierarchy>
+      </hierarchies>
+    </localDimension>
+  </localDimensions></logicalModel>
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
