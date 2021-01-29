@@ -1,4 +1,4 @@
-d# Overview
+# Overview
 
 This project is part of the SAP Business Technology Platform Showcase – Overall end-to-end Demo blog, published at https://blogs.sap.com/2021/01/27/sap-business-technology-platform-showcase-overall-end-to-end-demo/
 
