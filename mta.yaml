@@ -1,13 +1,13 @@
 _schema-version: "3.1"
-ID: csm-demo-202002-actuals-cap
+ID: dasc-showcase-actuals-cap
 description: A simple CAP project.
 version: 1.0.0
 modules:
-- name: csm-demo-202002-actuals-cap-srv
+- name: dasc-showcase-actuals-cap-srv
   type: nodejs
   path: gen/srv
   requires:
-  - name: csm-demo-202002-actuals-cap-db
+  - name: dasc-showcase-actuals-cap-db
     parameters:
       disk-quota: 256M
       memory: 256M
@@ -16,11 +16,11 @@ modules:
   - name: srv-api
     properties:
       srv-url: ${default-url}
-- name: csm-demo-202002-actuals-cap-db-deployer
+- name: dasc-showcase-actuals-cap-db-deployer
   type: hdb
   path: db
   requires:
-  - name: csm-demo-202002-actuals-cap-db
+  - name: dasc-showcase-actuals-cap-db
     parameters:
       disk-quota: 256M
       memory: 256M
@@ -34,12 +34,12 @@ modules:
   parameters:
     buildpack: nodejs_buildpack
 resources:
-- name: csm-demo-202002-actuals-cap-db
+- name: dasc-showcase-actuals-cap-db
   type: com.sap.xs.hdi-container
   parameters:
     config:
       database_id: 9ee99a70-9d98-481d-ab94-00b0417b66c5
-      schema: CSM_DEMO_202002_ACTUALS
+      schema: DASC_SHOWCASE_ACTUALS
     service: hana
     service-plan: hdi-shared
   properties:

@@ -1,3 +1,9 @@
+d# Overview
+
+This project is part of the SAP Business Technology Platform Showcase – Overall end-to-end Demo blog, published at https://blogs.sap.com/2021/01/27/sap-business-technology-platform-showcase-overall-end-to-end-demo/
+
+This project creates an SAP HANA Deployment Infrastructure (aka HDI) container on SAP HANA Cloud and persist actual sales data originated from an external system in the same SAP Data Warehouse Cloud’s existing persistence area. We will show how to provide bi-directional access between SAP Data Warehouse Cloud and SAP HANA Cloud’s managed datasets, and also how to expose SAP HANA Cloud & SAP Data Warehouse Cloud’s artifacts, like a table or a Graphical View, as oData services.
+
 # Use CAP to consume DWC tables/views and expose HDI tables/views as OData Services
 
 This project serves an example where we can use a [Cloud Application Programming model (CAP)](https://cap.cloud.sap/docs/about/) to
@@ -220,7 +226,7 @@ Build Project:
 
 Create HDI container (project name-db) in SCP's HANA Cloud – name can also be found in the mta.yaml file:
 
-- cf create-service hana hdi-shared csm-demo-202002-actuals-cap-db-db
+- cf create-service hana hdi-shared dasc-showcase-actuals-cap-db
 
 The execute the following 2 commands to deploy the db folder and srv folder respective in SCP
 
