@@ -1,0 +1,18 @@
+{
+    "format_version": 1,
+    "imports": [
+        {
+            "import_settings" : {
+                "import_columns" : [ 
+                    "YEAR_","MONTH_","WEEKNUM_","WEEKDAY_","DAY_","WEEKEND_YN_","HOUR_","MINUTE_","EN_CONS_ACTUAL","UNIT"
+                ]
+            },
+            "target_table": "EN_CONS_ACTUALS_HDI",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "EN_CONS_ACTUALS_HDI.csv",
+                "has_header": true
+            }
+        }
+    ]
+}
