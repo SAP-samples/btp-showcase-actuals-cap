@@ -1,7 +1,7 @@
 {
 	"EN_CONS_X_PROD_ACTUALS" : {
     	"target": {
-    		"schema.configure": "UPS_DWC_SPACE_CSMDEMO202002/schema",
+    		"schema.configure": "UPS_DWC_SPACE_DASCSHOWCASE/schema",
     		"object": "EN_CONS_X_PROD_ACTUALS"
     	}
 	}

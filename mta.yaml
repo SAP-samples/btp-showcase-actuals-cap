@@ -47,7 +47,7 @@ resources:
 - name: cross-container-service-1
   type: org.cloudfoundry.existing-service
   parameters:
-    service-name: UPS_DWC_SPACE_CSMDEMO202002
+    service-name: UPS_DWC_SPACE_DASCSHOWCASE
   properties:
     the-service-name: ${service-name}
 parameters:
