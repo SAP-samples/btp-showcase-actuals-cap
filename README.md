@@ -2,41 +2,21 @@
 
 # Description
 
-This project creates an SAP HANA Deployment Infrastructure (aka HDI) container on SAP HANA Cloud and persist actual sales data originated from an external system in the same SAP Data Warehouse Cloud’s existing persistence area. We will show how to provide bi-directional access between SAP Data Warehouse Cloud and SAP HANA Cloud’s managed datasets, and also how to expose SAP HANA Cloud & SAP Data Warehouse Cloud’s artifacts, like a table or a Graphical View, as oData services.
+This project creates an SAP HANA Deployment Infrastructure (aka HDI) container on SAP HANA Cloud and persist actual sales data originated from an external system in the same SAP Data Warehouse Cloud’s existing persistence area. We will show how to provide bi-directional access between SAP Data Warehouse Cloud and SAP HANA Cloud’s managed datasets, and also how to expose SAP HANA Cloud and SAP Data Warehouse Cloud’s artifacts, like a table or a Graphical View, as oData services.
 
 This project is part of the [SAP Business Technology Platform Showcase – Overall End-to-End Demo](https://blogs.sap.com/2021/01/27/sap-business-technology-platform-showcase-overall-end-to-end-demo/) blog.
 
 ## Requirements
 
-SAP HANA Cloud.
-SAP Data Warehouse Cloud
-SAP Analytics Cloud
+* SAP HANA Cloud
+* SAP Data Warehouse Cloud
+* SAP Analytics Cloud
 
 If you still don’t have an SAP account for starting your developments, don’t worry… SAP is providing you with a completely free SAP trial account (https://saphanajourney.com/free-trial/), so you can join our network and get access to all SAP BTP solutions (SAP HANA Cloud. SAP Data Warehouse Cloud, SAP Analytics Cloud) required for you to implement all projects & artifacts presented in this blog,
 
 ## Download and Installation
 
 You can just clone this project and deploy it in any SAP HANA Cloud instance.
-
-## Known Issues
-
-No know issues identified.
-
-## How to obtain support
-
-For additional support, please post in the related blog, specified in the "Description" session of this document.
- 
-## Contributing
-
-Feel free to contribute commenting in the related blog, specified in the "Description" session of this document.
-
-## To-Do (upcoming changes)
-No To-Do's planned.
-
-## License
-Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
-
-
 
 # Documentation for: Use CAP to consume DWC tables/views and expose HDI tables/views as OData Services
 
@@ -296,3 +276,20 @@ Click on the above application route, and it will take you to the OData services
 You can now view the data by clicking the object name above:
 
 ![](/images/OdataService_Data.png)
+
+## Known Issues
+
+No known issues identified.
+
+## How to obtain support
+
+[Create an issue](https://github.com/SAP-samples/btp-showcase-actuals-cap/issues) in this repository if you find a bug or have questions about the content.
+ 
+For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).
+
+## Contributing
+
+Feel free to comment in the [SAP Business Technology Platform Showcase – Overall End-to-End Demo](https://blogs.sap.com/2021/01/27/sap-business-technology-platform-showcase-overall-end-to-end-demo/) blog.
+
+## License
+Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
