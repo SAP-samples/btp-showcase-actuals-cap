@@ -1,4 +1,4 @@
-# SAP Business Technology Platform Showcase, Part 2: Access the SAP HANA Cloud database underneath SAP Data Warehouse Cloud
+# SAP Business Technology Platform Showcase: Access the SAP HANA Cloud database underneath SAP Data Warehouse Cloud
 
 # Description
 
