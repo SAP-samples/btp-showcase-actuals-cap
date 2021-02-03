@@ -1,6 +1,6 @@
-# Description
+# SAP Business Technology Platform Showcase, Part 2: Access the SAP HANA Cloud database underneath SAP Data Warehouse Cloud
 
-SAP Business Technology Platform Showcase - Access the SAP HANA Cloud database underneath SAP Data Warehouse Cloud.
+# Description
 
 This project creates an SAP HANA Deployment Infrastructure (aka HDI) container on SAP HANA Cloud and persist actual sales data originated from an external system in the same SAP Data Warehouse Cloud’s existing persistence area. We will show how to provide bi-directional access between SAP Data Warehouse Cloud and SAP HANA Cloud’s managed datasets, and also how to expose SAP HANA Cloud & SAP Data Warehouse Cloud’s artifacts, like a table or a Graphical View, as oData services.
 
