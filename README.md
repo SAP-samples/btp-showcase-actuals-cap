@@ -1,4 +1,4 @@
-# SAP Business Technology Platform Showcase: Access the SAP HANA Cloud database underneath SAP Data Warehouse Cloud
+# SAP Business Technology Platform Showcase: Access SAP HANA Cloud Database Underneath SAP Data Warehouse Cloud
 
 # Description
 
@@ -32,7 +32,7 @@ This project serves an example where we can use a [Cloud Application Programming
 2. SAP Cloud Platform (SCP) linked to the DWC SAP HANA Cloud
 3. Business Application Studio (BAS).
 
-## Data Warehouse Cloud Set up
+## Data Warehouse Cloud Setup
 
 1. We assume, a DWC space with an underlying HANA Cloud is available:
 
@@ -56,7 +56,7 @@ To get the credentials -> Click on the right most information icon of the Databa
 
 ![](/images/DWC_Graphical_View.png)
 
-## SAP Cloud Platform Set Up
+## SAP Cloud Platform Setup
 
 For SCP, we assume you have a space available in SCP account and it is connected to the DWC's HANA Cloud instance.
 Here, you create a user-provided service in the space to access the DWC database user. Use the json credentials from the DWC Database user for the json parameters.
