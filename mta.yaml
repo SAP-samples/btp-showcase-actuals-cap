@@ -1,13 +1,13 @@
 _schema-version: "3.1"
-ID: btp-showcase-actuals-cap
+ID: btp-showcase-actuals
 description: A simple CAP project.
 version: 1.0.0
 modules:
-- name: btp-showcase-actuals-cap-srv
+- name: btp-showcase-actuals-srv
   type: nodejs
   path: gen/srv
   requires:
-  - name: btp-showcase-actuals-cap-db
+  - name: btp-showcase-actuals-db
     parameters:
       disk-quota: 256M
       memory: 256M
@@ -16,11 +16,11 @@ modules:
   - name: srv-api
     properties:
       srv-url: ${default-url}
-- name: btp-showcase-actuals-cap-db-deployer
+- name: btp-showcase-actuals-db-deployer
   type: hdb
   path: db
   requires:
-  - name: btp-showcase-actuals-cap-db
+  - name: btp-showcase-actuals-db
     parameters:
       disk-quota: 256M
       memory: 256M
@@ -34,7 +34,7 @@ modules:
   parameters:
     buildpack: nodejs_buildpack
 resources:
-- name: btp-showcase-actuals-cap-db
+- name: btp-showcase-actuals-db
   type: com.sap.xs.hdi-container
   parameters:
     config:
