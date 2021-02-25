@@ -1,3 +1,5 @@
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-showcase-forecast)](https://api.reuse.software/info/github.com/SAP-samples/btp-showcase-forecast)
+
 # SAP Business Technology Platform Showcase: Access SAP HANA Cloud Database Underneath SAP Data Warehouse Cloud
 
 # Description
