@@ -31,7 +31,7 @@ This project serves an example where we can use a [Cloud Application Programming
 ## Prerequisites
 
 1. Data Warehouse Cloud (DWC) with SAP HANA Cloud
-2. SAP Cloud Platform (SCP) linked to the DWC SAP HANA Cloud
+2. SAP Business Technology Platform (BTP) linked to the DWC SAP HANA Cloud
 3. Business Application Studio (BAS).
 
 ## Data Warehouse Cloud Setup
@@ -40,7 +40,7 @@ This project serves an example where we can use a [Cloud Application Programming
 
 ![](/images/DWC_Space.png)
 
-2. A database user is created under the DWC space and the credentials can be copied later to be used to create a user-define service in SCP:
+2. A database user is created under the DWC space and the credentials can be copied later to be used to create a user-defined service in BTP:
 
 Database User:
 
@@ -58,9 +58,9 @@ To get the credentials -> Click on the right most information icon of the Databa
 
 ![](/images/DWC_Graphical_View.png)
 
-## SAP Cloud Platform Setup
+## SAP Business Technology Platform Setup
 
-For SCP, we assume you have a space available in SCP account and it is connected to the DWC's HANA Cloud instance.
+For BTP, we assume you have a space available in BTP account and it is connected to the DWC's HANA Cloud instance.
 Here, you create a user-provided service in the space to access the DWC database user. Use the json credentials from the DWC Database user for the json parameters.
 
 ![](/images/SCP_UserProvidedService.png)
@@ -89,11 +89,11 @@ At the bottom of the screen we notice it highlights – &quot;The organization a
 
 ### Add Cloud Foundry as the target in BAS
 
-Now, we add our SCP Cloud Foundry Space as a target Use View -> Find Command to find the command to create New Cloud Foundry target:
+Now, we add our BTP Cloud Foundry Space as a target Use View -> Find Command to find the command to create New Cloud Foundry target:
 
 ![](/images/BAS_CloudFoundryCommand.png)
 
-Enter all the subsequent details to be connected to the cloud foundry space – the same space where you create your user-defined service in SCP. Now at the bottom on BAS, you should be able to see you are connected to the Cloud Foundry Space:
+Enter all the subsequent details to be connected to the cloud foundry space – the same space where you create your user-defined service in BTP. Now at the bottom on BAS, you should be able to see you are connected to the Cloud Foundry Space:
 
 ![](/images/BAS_CloudFoundryConnected.png)
 
@@ -133,9 +133,9 @@ It also contains a &quot;resources&quot; section - Something required by the MTA
 
 #### Prepare your project to access DWC
 
-Since we need to access the DWC database and the SCP user-provided service for cross container access, we add them to the resources section of the mta.yaml file.
+Since we need to access the DWC database and the BTP user-provided service for cross container access, we add them to the resources section of the mta.yaml file.
 
-Modify the mta.yaml file to add the database id of the DWC as a dependent resource for your HDI container. And also add the SCP user-defined service as an existing service:
+Modify the mta.yaml file to add the database id of the DWC as a dependent resource for your HDI container. And also add the BTP user-defined service as an existing service:
 
 ![](/images/BAS_mta_yaml_DWCDependency.png)
 
@@ -227,9 +227,9 @@ The Final Structure of the project would look like this:
 
 ![](/images/BAS_FinalStructure.png)
 
-### Deploy the application to SCP
+### Deploy the application to BTP
 
-Now we have the project created with all relevant objects, prepared it for deployment of the DB objects on HANA Cloud. Now we need to deploy the application to SCP. To do that, open a new terminal
+Now we have the project created with all relevant objects, prepared it for deployment of the DB objects on HANA Cloud. Now we need to deploy the application to BTP. To do that, open a new terminal
 
 ![](/images/BAS_OpenTerminal.png)
 
@@ -240,11 +240,11 @@ Build Project:
 - export NODE\_ENV=production
 - cds build/all –clean
 
-Create HDI container (project name-db) in SCP's HANA Cloud – name can also be found in the mta.yaml file:
+Create HDI container (project name-db) in BTP's HANA Cloud – name can also be found in the mta.yaml file:
 
 - cf create-service hana hdi-shared dasc-showcase-actuals-cap-db
 
-The execute the following 2 commands to deploy the db folder and srv folder respective in SCP
+The execute the following 2 commands to deploy the db folder and srv folder respective in BTP
 
 - cf push -f gen/db -k 256M
 
@@ -254,17 +254,17 @@ The execute the following 2 commands to deploy the db folder and srv folder resp
 
   --This command will deploy your application exposing it as OData service and will generate a random application url
 
-Once the above commands are successful, you can go to your space in SCP and check the applications and the HDI container created:
+Once the above commands are successful, you can go to your space in BTP and check the applications and the HDI container created:
 
-#### HDI Container in SCP
+#### HDI Container in BTP
 
 In the Service Instances section we can find the HDI container has been created and has both the db and srv applications bound to it.
 
 ![](/images/SCP_HDIContainer.png)
 
-#### Deployed Applications in SCP
+#### Deployed Applications in BTP
 
-In the Applications section of the SCP space, we can see the db and the srv applications we created:
+In the Applications section of the BTP space, we can see the db and the srv applications we created:
 
 ![](/images/SCP_DeployedApplications.png)
 
