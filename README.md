@@ -1,3 +1,10 @@
+## Deprecation Notice
+
+This public repository is read-only and no longer maintained.
+
+![](https://img.shields.io/badge/STATUS-NOT%20CURRENTLY%20MAINTAINED-red.svg?longCache=true&style=flat)
+
+---
 # SAP Business Technology Platform Showcase: Access SAP HANA Cloud Database Underneath SAP Data Warehouse Cloud
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-showcase-actuals-cap)](https://api.reuse.software/info/github.com/SAP-samples/btp-showcase-actuals-cap)
